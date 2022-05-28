@@ -1,0 +1,17 @@
+.start {
+    background-color: #E09A38;
+    height: 60vh;
+    color: #0F5C8C;
+}
+
+.start h1 {
+    font-size: 3em;
+    text-align: center;
+    padding: 7vh;
+}
+
+.start p {
+    font-size: 2em;
+    padding: 3vh;
+    text-align: center;
+}
