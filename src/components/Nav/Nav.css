@@ -1,4 +1,13 @@
 .nav {
     height: 10vh;
-    background-color: olivedrab;
+    background-color: #0F5C8C;
+}
+
+.div-wrapper {
+    width: 70%;
+    height: 10vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

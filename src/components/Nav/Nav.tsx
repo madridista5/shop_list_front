@@ -1,16 +1,17 @@
 import React from "react";
 
 import './Nav.css';
+import {Btn} from "../common/Btn";
 
 export const Nav = () => {
   return <>
       <nav className="nav">
-          <ul>
-              <li>Strona główna</li>
-              <li>Dodaj sklep</li>
-              <li>Lista sklepów</li>
-              <li>Mapa</li>
-          </ul>
+          <div className="div-wrapper">
+              <Btn text="Start" to="/"/>
+              <Btn text="Dodaj sklep" to="/add-shop"/>
+              <Btn text="Lista sklepów" to="/shop-list"/>
+              <Btn text="Mapa" to="/map"/>
+          </div>
       </nav>
   </>;
 };
