@@ -7,9 +7,9 @@ export const Nav = () => {
   return <>
       <nav className="nav">
           <div className="div-wrapper">
-              <Btn text="Start" to="/"/>
-              <Btn text="Dodaj sklep" to="/add-shop"/>
-              <Btn text="Lista sklepów" to="/shop-list"/>
+              <Btn text="start" to="/"/>
+              <Btn text="Dodaj sklep" to="/shops/add"/>
+              <Btn text="Lista sklepów" to="/shops"/>
               <Btn text="Mapa" to="/map"/>
           </div>
       </nav>

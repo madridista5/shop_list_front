@@ -8,10 +8,14 @@
     font-size: 3em;
     text-align: center;
     padding: 7vh;
+    max-width: 500px;
+    margin: 0 auto;
 }
 
 .start p {
     font-size: 2em;
     padding: 3vh;
-    text-align: center;
+    text-align: justify;
+    max-width: 500px;
+    margin: 0 auto;
 }
