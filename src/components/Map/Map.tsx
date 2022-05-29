@@ -28,7 +28,7 @@ export const Map = () => {
         <>
             <MapSearchForm/>
             <div className="map">
-                <MapContainer center={[50.4341211,16.6163938]} zoom={9}>
+                <MapContainer center={[50.4341211,16.6163938]} zoom={6}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -42,12 +42,6 @@ export const Map = () => {
                             </Marker>
                         ))
                     }
-                    {/*<Marker position={[50.2657152,18.9945008]}>*/}
-                    {/*    <Popup>*/}
-                    {/*        <h2>It.focus</h2>*/}
-                    {/*        <p>Super firma programistyczna</p>*/}
-                    {/*    </Popup>*/}
-                    {/*</Marker>*/}
                 </MapContainer>
             </div>
 
