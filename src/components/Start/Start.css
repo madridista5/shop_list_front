@@ -1,7 +1,8 @@
 .start {
     background-color: #E09A38;
-    height: 60vh;
-    color: #0F5C8C;
+    height: auto;
+    min-height: 60vh;
+    color: white;
 }
 
 .start h1 {

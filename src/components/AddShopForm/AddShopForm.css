@@ -1,0 +1,32 @@
+.add-form {
+    background-color: #E09A38;
+    height: auto;
+    min-height: 60vh;
+    color: white;
+}
+
+.add-form form {
+    width: 700px;
+    margin: 0 auto;
+}
+
+.add-form h1 {
+    font-size: 3em;
+    text-align: center;
+    padding-top: 1vh;
+}
+
+.add-form p {
+    margin-top: 2em;
+}
+
+.add-form label {
+    font-size: 2em;
+}
+
+.add-form input {
+    width: 100%;
+    margin-top: 0.3em;
+    padding: 0.1em;
+    font-size: 1em;
+}

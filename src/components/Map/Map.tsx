@@ -28,7 +28,7 @@ export const Map = () => {
         <>
             <MapSearchForm/>
             <div className="map">
-                <MapContainer center={[50.4341211,16.6163938]} zoom={6}>
+                <MapContainer center={[52.0,20.0]} zoom={6}>
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
