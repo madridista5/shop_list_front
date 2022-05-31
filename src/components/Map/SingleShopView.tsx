@@ -24,7 +24,7 @@ export const SingleShopView = (props: Props) => {
     return <>
         <h2>Nazwa: {shop.name}</h2>
         <p>Kategoria: {shop.category}</p>
-        <p>{!!shop.url && <p>Adres www: {shop.url}</p>}</p>
+        <p>{!!shop.url && <p>Adres www: <a href={shop.url}>{shop.url}</a></p>}</p>
         <p>Szczegóły: <a href={`${domain}/shops/showSingle/${props.id}`}>Klik</a></p>
     </>
 };
