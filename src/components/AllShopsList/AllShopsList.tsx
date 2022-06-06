@@ -7,9 +7,14 @@ import {Link} from "react-router-dom";
 import {MapSearchForm} from "../Map/MapSearchForm";
 import {SearchContext} from "../../contexts/search.context";
 
+interface ShopEntityWithSearchProductData extends ShopEntity {
+    productName?: string,
+    productPrice?: number,
+}
+
 export const AllShopsList = () => {
     const {search} = useContext(SearchContext);
-    const [shops, setShops] = useState<ShopEntity[]>([]);
+    const [shops, setShops] = useState<ShopEntityWithSearchProductData[]>([]);
 
     useEffect(() => {
         (async () => {
@@ -22,8 +27,13 @@ export const AllShopsList = () => {
     useEffect(() => {
         (async () => {
             const res = await fetch(`${apiUrl}/shops/${search}`);
-            const data = await res.json();
-            setShops(data);
+            const data: ShopEntity[] = await res.json();
+            const newData = data.map(shop => ({
+                ...shop,
+                productName: search,
+                // productPrice: ??),
+            })) as ShopEntityWithSearchProductData[];
+            setShops(newData);
         })();
     }, [search]);
 
@@ -37,8 +47,7 @@ export const AllShopsList = () => {
                         <p>Nazwa: {shop.name}</p>
                         <p>Kategoria: {shop.category}</p>
                         {shop.url && <p>Adres URL: <a href={shop.url}>{shop.url}</a></p>}
-                        {/*<p>Lista produktów:</p>*/}
-                        {/*add new component with all products*/}
+                        {shop.productName && <p>Produkt: {shop.productName}</p>}
                         <p className="last-p">
                             <Link to="/test" className="link">Edytuj</Link>
                             <Link to="/test" className="link">Usuń</Link>
