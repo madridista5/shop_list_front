@@ -1,9 +1,9 @@
 import React from "react";
 
-import './SingleShop.css';
+interface Props {
+    id: string,
+}
 
-export const SingleShop = () => {
-  return <>
-      <h2>Single Shop View and its products.</h2>
-  </>
+export const SingleShop = (props: Props) => {
+  return <h2>ID: {props.id}.</h2>
 };

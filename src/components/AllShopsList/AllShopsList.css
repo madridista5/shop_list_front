@@ -24,6 +24,7 @@
     margin-bottom: 3vh;
     background-color: #0F5C8C;
     border-radius: 10px;
+    border: 2px solid white;
 }
 
 .single-shop-wrapper p {

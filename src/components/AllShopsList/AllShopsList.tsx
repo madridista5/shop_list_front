@@ -24,12 +24,12 @@ export const AllShopsList = () => {
                     <p>Nazwa: {shop.name}</p>
                     <p>Kategoria: {shop.category}</p>
                     {shop.url && <p>Adres URL: <a href={shop.url}>{shop.url}</a></p>}
-                    <p>Lista produktów:</p>
+                    {/*<p>Lista produktów:</p>*/}
                     {/*add new component with all products*/}
                     <p className="last-p">
-                        <Link to="/test" className="link">Edytuj</Link>
-                        <Link to="/test" className="link">Usuń</Link>
-                        <Link to="/test" className="link">Dodaj produkt</Link>
+                            <Link to="/test" className="link">Edytuj</Link>
+                            <Link to="/test" className="link">Usuń</Link>
+                            <Link to="/test" className="link">Szczegóły</Link>
                     </p>
                 </li>))
             }

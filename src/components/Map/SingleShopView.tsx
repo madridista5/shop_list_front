@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { ShopEntity } from "types";
-import {apiUrl, domain} from "../../config/api";
+import {ShopEntity, SimplyProductEntity} from "types";
+import {apiUrl} from "../../config/api";
 
 interface Props {
     id: string,
@@ -8,23 +8,32 @@ interface Props {
 
 export const SingleShopView = (props: Props) => {
     const [shop, setShop] = useState<ShopEntity | null>(null);
+    const [products, setShopProducts] = useState<SimplyProductEntity[] | null>(null);
 
     useEffect(() => {
         (async () => {
-            const res = await fetch(`${apiUrl}/shops/single/${props.id}`);
-            const data = await res.json();
-            setShop(data);
-        })();
-    },[]);
+            const resShop = await fetch(`${apiUrl}/shops/single/${props.id}`);
+            const dataShop = await resShop.json();
+            setShop(dataShop);
 
-    if(shop === null) {
+            const resProducts = await fetch(`${apiUrl}/products/singleShop/${props.id}`);
+            const dataProducts = await resProducts.json();
+            setShopProducts(dataProducts);
+        })();
+    }, []);
+
+    if (shop === null) {
         return <p>Wczytywanie...</p>;
     }
 
     return <>
-        <h2>Nazwa: {shop.name}</h2>
+        <h2>Nazwa sklepu: {shop.name}</h2>
         <p>Kategoria: {shop.category}</p>
         {!!shop.url && <p>Adres www: <a href={shop.url}>{shop.url}</a></p>}
-        <p>Szczegóły: <a href={`${domain}/shops/showSingle/${props.id}`}>Klik</a></p>
+        <ul>
+            {!!products &&
+                products.map(product => (<li key={product.id}>Produkt: {product.name}, Cena: {product.price} zł.</li>))
+            }
+        </ul>
     </>
 };

@@ -19,7 +19,6 @@ export const Map = () => {
         (async () => {
             const res = await fetch(`${apiUrl}/shops/${search}`);
             const data = await res.json();
-            console.log(data);
             setShops(data);
         })();
     }, [search]);
