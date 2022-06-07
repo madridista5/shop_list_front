@@ -96,17 +96,19 @@ export const AddShopForm = () => {
                             name="url"
                             maxLength={100}
                             value={form.url}
+                            placeholder="https://....."
                             onChange={e => updateForm('url', e.target.value)}
                         />
                     </label>
                 </p>
                 <p>
                     <label>
-                        Adres (wpisz w następującej kolejności: "Miasto, NazwaUlicy Numer"): <br/>
+                        Adres (wpisz w następującej kolejności: Miasto, NazwaUlicy Numer): <br/>
                         <input
                             type="text"
                             name="address"
                             required
+                            placeholder={`Np: Kłodzko, Noworudzka 2`}
                             onChange={e => updateForm('address', e.target.value)}
                         />
                     </label>

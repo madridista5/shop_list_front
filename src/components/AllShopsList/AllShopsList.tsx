@@ -28,11 +28,24 @@ export const AllShopsList = () => {
         (async () => {
             const res = await fetch(`${apiUrl}/shops/${search}`);
             const data: ShopEntity[] = await res.json();
-            const newData = data.map(shop => ({
+
+            let newData = data.map(shop => ({
                 ...shop,
                 productName: search,
-                // productPrice: ??),
             })) as ShopEntityWithSearchProductData[];
+
+            if(search) {
+                for (let i = 0; i < newData.length; i++) {
+                    const resProductData = await fetch(`${apiUrl}/products/singleProduct/${data[i].id}/${search}`);
+                    const productData = await resProductData.json();
+
+                    newData[i] = {
+                        ...newData[i],
+                        productPrice: productData[0].price,
+                    };
+                }
+            }
+
             setShops(newData);
         })();
     }, [search]);
@@ -47,7 +60,7 @@ export const AllShopsList = () => {
                         <p>Nazwa: {shop.name}</p>
                         <p>Kategoria: {shop.category}</p>
                         {shop.url && <p>Adres URL: <a href={shop.url}>{shop.url}</a></p>}
-                        {shop.productName && <p>Produkt: {shop.productName}</p>}
+                        {(shop.productName && shop.productPrice) && <p>Produkt: {shop.productName}, Cena: {shop.productPrice.toFixed(2)} zł.</p>}
                         <p className="last-p">
                             <Link to="/test" className="link">Edytuj</Link>
                             <Link to="/test" className="link">Usuń</Link>
