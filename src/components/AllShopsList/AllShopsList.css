@@ -33,10 +33,6 @@
     padding-bottom: 2vh;
 }
 
-.last-p {
-
-}
-
 .single-shop-wrapper a {
     font-size: 1em;
 }
@@ -60,4 +56,8 @@
 
 .search-product {
     color: #E09A38;
+}
+
+.form {
+    margin-bottom: 2vh;
 }

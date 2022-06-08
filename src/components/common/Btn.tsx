@@ -10,6 +10,6 @@ interface Props {
 
 export const Btn = (props: Props) => {
     return (
-        <Link className="btn" to={props.to}>{props.text}</Link>
+        <Link type="submit" className="btn" to={props.to}>{props.text}</Link>
     );
 };

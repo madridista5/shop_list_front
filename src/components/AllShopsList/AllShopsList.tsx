@@ -6,6 +6,8 @@ import { ShopEntity } from "types";
 import {MapSearchForm} from "../Map/MapSearchForm";
 import {SearchContext} from "../../contexts/search.context";
 import {BtnProduct} from "../common/BtnProduct";
+import {IdContext} from "../../contexts/id.context";
+import {AddProductForm} from "../AddProductForm/AddProductForm";
 
 interface ShopEntityWithSearchProductData extends ShopEntity {
     productName?: string,
@@ -14,6 +16,7 @@ interface ShopEntityWithSearchProductData extends ShopEntity {
 
 export const AllShopsList = () => {
     const {search} = useContext(SearchContext);
+    const {id, setId} = useContext(IdContext);
     const [shops, setShops] = useState<ShopEntityWithSearchProductData[]>([]);
 
     useEffect(() => {
@@ -21,6 +24,7 @@ export const AllShopsList = () => {
             const res = await fetch(`${apiUrl}/shops`);
             const shops = await res.json();
             setShops(shops);
+            setId('');
         })();
     }, []);
 
@@ -50,6 +54,10 @@ export const AllShopsList = () => {
         })();
     }, [search]);
 
+    if(id) {
+        return <AddProductForm/>;
+    }
+
     return <>
         <MapSearchForm/>
         <div className="shops-wrapper">
@@ -61,14 +69,12 @@ export const AllShopsList = () => {
                         <p>Kategoria: {shop.category}</p>
                         {shop.url && <p>Adres URL: <a href={shop.url}>{shop.url}</a></p>}
                         {(shop.productName && shop.productPrice) && <p className="search-product">Produkt: {shop.productName}, Cena: {shop.productPrice.toFixed(2)} zł.</p>}
-                        <p className="last-p">
-                            <form action="">
+                            <form onSubmit={() => setId(shop.id)} className="form">
                                 <BtnProduct text="Dodaj produkt"/>
-                                <BtnProduct text="Zobacz produkty"/>
                             </form>
-                        </p>
                     </li>))
                 }
             </div>
-        </div></>;
+        </div>
+    </>;
 };
