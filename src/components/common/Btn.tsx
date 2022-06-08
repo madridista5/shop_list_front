@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import {Link} from "react-router-dom";
 
 import './Btn.css';
+import {SearchContext} from "../../contexts/search.context";
 
 interface Props {
     text: string;
@@ -9,7 +10,9 @@ interface Props {
 }
 
 export const Btn = (props: Props) => {
+    const {setSearch} = useContext(SearchContext);
+
     return (
-        <Link type="submit" className="btn" to={props.to}>{props.text}</Link>
+        <Link type="submit" className="btn" to={props.to} onClick={() => setSearch('')}>{props.text}</Link>
     );
 };
