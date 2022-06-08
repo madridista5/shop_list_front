@@ -3,9 +3,9 @@ import React, {useContext, useEffect, useState} from "react";
 import './AllShopsList.css';
 import {apiUrl} from "../../config/api";
 import { ShopEntity } from "types";
-import {Link} from "react-router-dom";
 import {MapSearchForm} from "../Map/MapSearchForm";
 import {SearchContext} from "../../contexts/search.context";
+import {BtnProduct} from "../common/BtnProduct";
 
 interface ShopEntityWithSearchProductData extends ShopEntity {
     productName?: string,
@@ -60,11 +60,12 @@ export const AllShopsList = () => {
                         <p>Nazwa: {shop.name}</p>
                         <p>Kategoria: {shop.category}</p>
                         {shop.url && <p>Adres URL: <a href={shop.url}>{shop.url}</a></p>}
-                        {(shop.productName && shop.productPrice) && <p>Produkt: {shop.productName}, Cena: {shop.productPrice.toFixed(2)} zł.</p>}
+                        {(shop.productName && shop.productPrice) && <p className="search-product">Produkt: {shop.productName}, Cena: {shop.productPrice.toFixed(2)} zł.</p>}
                         <p className="last-p">
-                            <Link to="/test" className="link">Edytuj</Link>
-                            <Link to="/test" className="link">Usuń</Link>
-                            <Link to="/test" className="link">Szczegóły</Link>
+                            <form action="">
+                                <BtnProduct text="Dodaj produkt"/>
+                                <BtnProduct text="Zobacz produkty"/>
+                            </form>
                         </p>
                     </li>))
                 }

@@ -34,7 +34,7 @@
 }
 
 .last-p {
-    display: flex;
+
 }
 
 .single-shop-wrapper a {
@@ -56,4 +56,8 @@
 .link:hover {
     color: #8C5201;
     border-color: #8C5201;
+}
+
+.search-product {
+    color: #E09A38;
 }

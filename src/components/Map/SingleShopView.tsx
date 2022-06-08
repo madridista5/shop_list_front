@@ -32,7 +32,7 @@ export const SingleShopView = (props: Props) => {
         {!!shop.url && <p>Adres www: <a href={shop.url}>{shop.url}</a></p>}
         <ul>
             {!!products &&
-                products.map(product => (<li key={product.id}>Produkt: {product.name}, Cena: {product.price} zł.</li>))
+                products.map(product => (<li key={product.id}>Produkt: {product.name}, Cena: {product.price.toFixed(2)} zł.</li>))
             }
         </ul>
     </>
