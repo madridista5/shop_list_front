@@ -15,7 +15,7 @@ interface ShopEntityWithSearchProductData extends ShopEntity {
 }
 
 export const AllShopsList = () => {
-    const {search} = useContext(SearchContext);
+    const {search, setSearch} = useContext(SearchContext);
     const {id, setId} = useContext(IdContext);
     const [shops, setShops] = useState<ShopEntityWithSearchProductData[]>([]);
 
@@ -24,6 +24,7 @@ export const AllShopsList = () => {
             const res = await fetch(`${apiUrl}/shops`);
             const shops = await res.json();
             setShops(shops);
+            setSearch('');
             setId('');
         })();
     }, []);
