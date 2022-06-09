@@ -6,11 +6,9 @@ import {Start} from "../Start/Start";
 import {Map} from "../Map/Map";
 import {AddShopForm} from "../AddShopForm/AddShopForm";
 import {AllShopsList} from "../AllShopsList/AllShopsList";
-import {SingleShop} from "../SingleShop/SingleShop";
-import {IdContext} from "../../contexts/id.context";
+import {AllProductsList} from "../AllProductsList/AllProductsList";
 
 export const Main = () => {
-    const {id} = useContext(IdContext);
 
     return <>
         <div className="main">
@@ -19,7 +17,7 @@ export const Main = () => {
                 <Route path="/shops/add" element={<AddShopForm/>}/>
                 <Route path="/shops" element={<AllShopsList/>}/>
                 <Route path="/map" element={<Map/>}/>
-                <Route path="/shops/showSingle/:id" element={<SingleShop id={id}/>}/>
+                <Route path="/products" element={<AllProductsList/>}/>
             </Routes>
         </div>
     </>
