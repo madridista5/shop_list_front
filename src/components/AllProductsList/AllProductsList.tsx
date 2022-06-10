@@ -15,14 +15,31 @@ export const AllProductsList = () => {
         })();
     }, []);
 
-    return <>
-        <h1>All Products List</h1>
-        <ul>
+    return <div className="products-list">
+        <h1>Lista produktów</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Nazwa produktu</th>
+                <th>Cena prdutku</th>
+                <th>Opis produktu</th>
+                <th>Nazwa sklepu</th>
+                <th>Kategoria sklepu</th>
+                <th>Url</th>
+            </tr>
+            </thead>
+            <tbody>
             {
-                data.map(record => (<li key={record.shopId}>
-                    <span>Nazwa produktu: {record.productName}, </span><span>Cena produktu: {record.productPrice} zł, </span><span>Opis Produktu: {record.description}, </span><span>Nazwa sklepu: {record.shopName}, </span><span>Kategoria sklepu: {record.category}, </span><span>Url: {record.url}.</span>
-                </li>))
+                data.map(record => (<tr key={record.shopId}>
+                    <td>{record.productName}</td>
+                    <td>{record.productPrice}</td>
+                    <td>{record.description}</td>
+                    <td>{record.shopName}</td>
+                    <td>{record.category}</td>
+                    <td>{record.url}</td>
+                </tr>))
             }
-        </ul>
-    </>
+            </tbody>
+        </table>
+    </div>
 };
