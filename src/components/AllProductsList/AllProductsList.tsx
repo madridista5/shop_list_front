@@ -32,7 +32,7 @@ export const AllProductsList = () => {
             {
                 data.map(record => (<tr key={record.shopId}>
                     <td>{record.productName}</td>
-                    <td>{record.productPrice}</td>
+                    <td>{record.productPrice} zł</td>
                     <td>{record.description}</td>
                     <td>{record.shopName}</td>
                     <td>{record.category}</td>
