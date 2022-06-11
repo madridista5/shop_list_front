@@ -1,0 +1,33 @@
+.form-wrapper {
+    height: 4vh;
+    background-color: #4FBBFF;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 15vw;
+}
+
+.form-wrapper input {
+    font-size: 1.5em;
+    margin-right: 1vw;
+}
+
+.form-wrapper button {
+    text-decoration: none;
+    color: white;
+    background-color: #E09A38;
+    border: 2px solid white;
+    border-radius: 3px;
+    font-size: 1.1em;
+    width: 7vw;
+    max-width: 128px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 4px 1px;
+    transition: 0.3s;
+}
+
+.form-wrapper button:hover {
+    color: #8C5201;
+    border-color: #8C5201;
+}

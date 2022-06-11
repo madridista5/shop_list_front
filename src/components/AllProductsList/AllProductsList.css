@@ -1,0 +1,40 @@
+.products-list {
+    background-color: #E09A38;
+    height: auto;
+    min-height: 60vh;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.products-list table {
+    background-color: #0F5C8C;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 2vh 2vw;
+}
+
+.products-list h1 {
+    font-size: 3em;
+    text-align: center;
+    padding: 3vh;
+    margin: 0 auto;
+}
+
+.products-list tr {
+    background-color: #4FBBFF;
+}
+
+.products-list th {
+    font-size: 1.8em;
+    background-color: #E09A38;
+    padding: 0.7vh 0.7vw;
+    border: 2px solid white;
+}
+
+.products-list td {
+    font-size: 1.3em;
+    padding: 0.3vh 0.3vw;
+    border: 2px solid white;
+    text-align: center;
+}

@@ -1,0 +1,21 @@
+.btn-product {
+    text-decoration: none;
+    color: white;
+    background-color: #2E97D9;
+    border: 2px solid white;
+    border-radius: 3px;
+    font-size: 1.3em;
+    width: 15vw;
+    min-width: 115px;
+    max-width: 170px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 8px 1px;
+    transition: 0.3s;
+    margin: 0 1vw;
+}
+
+.btn-product:hover {
+    color: #8C5201;
+    border-color: #8C5201;
+}

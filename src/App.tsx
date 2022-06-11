@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
+import {Header} from "./components/Header/Header";
+import {Nav} from "./components/Nav/Nav";
+import {Main} from "./components/Main/Main";
+import {SearchContext} from './contexts/search.context';
+import {IdContext} from './contexts/id.context';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
+    const [search, setSearch] = useState('');
+    const [id, setId] = useState('');
 
-export default App;
+    return (
+        <SearchContext.Provider value={{search, setSearch}}>
+            <IdContext.Provider value={{id, setId}}>
+                <div className="wrapper">
+                    <Header/>
+                    <Nav/>
+                    <Main/>
+                </div>
+            </IdContext.Provider>
+        </SearchContext.Provider>
+    );
+};
