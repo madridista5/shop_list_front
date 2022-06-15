@@ -30,7 +30,7 @@ export const AllProductsList = () => {
             </thead>
             <tbody>
             {
-                data.map(record => (<tr key={record.shopId}>
+                data.map(record => (<tr key={record.productId}>
                     <td>{record.productName}</td>
                     <td>{record.productPrice} zł</td>
                     <td>{record.description}</td>
