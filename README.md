@@ -1,3 +1,5 @@
+You can see how this application works: https://findandbuyproduct.tlossy.networkmanager.pl
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
